@@ -7,7 +7,7 @@ public class BackgroundMainMenu : MonoBehaviour {
     private bool changeDir = false;
     private float range = 10f;
 
-    void FixedUpdate() {
+    void Update() {
         if (transform.position.x > range || transform.position.x < -range) {
             changeDir = !changeDir;
         }
