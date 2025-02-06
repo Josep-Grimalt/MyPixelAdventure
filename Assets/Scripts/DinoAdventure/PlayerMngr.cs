@@ -64,10 +64,6 @@ public class PlayerMngr : MonoBehaviour
                 //sndManager.GetComponent<SoundManager>().PlayFX(0);
                 GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, jumpSpeed);
             }
-
-            /*if ((transform.position.y < -12f) && !isDead){
-                KillPlayer();
-            }*/
         }
     }
 
@@ -125,7 +121,7 @@ public class PlayerMngr : MonoBehaviour
         isPlayerReady = false;
         lifes -= 1;
         //sndManager.GetComponent<SoundManager>().PlayFX(3);
-        anim.SetTrigger("dead");
+        anim.SetBool("dead", isDead);
         rb.bodyType = RigidbodyType2D.Static;
 
         if (lifes > 0)
