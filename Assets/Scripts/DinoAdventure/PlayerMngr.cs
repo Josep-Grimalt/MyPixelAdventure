@@ -14,7 +14,9 @@ public class PlayerMngr : MonoBehaviour
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private float speed = 7f;
     [SerializeField] private float jumpSpeed = 7f;
+    [SerializeField] private float dashSpeed = 70f, dashDuration = 0.2f, dashCooldown = 1;
     private float dirX;
+    private bool canDash, isDashing;
 
     private int lifes;
     private bool isDead;
@@ -36,12 +38,29 @@ public class PlayerMngr : MonoBehaviour
         lifes = 3;
         isDead = false;
         isPlayerReady = true;
+        canDash = true;
+        isDashing = false;
     }
 
     void Update()
     {
-        UpdateMovement();
+        if (!isPlayerReady) return;
+
+        //GetAxis
+        dirX = Input.GetAxisRaw("Horizontal");
+
         UpdateAnimator();
+
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        {
+            //sndManager.GetComponent<SoundManager>().PlayFX(0);
+            GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, jumpSpeed);
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        {
+            StartCoroutine(Dash());
+        }
 
         //HACK!
         if (Input.GetKeyDown(KeyCode.P))
@@ -51,20 +70,14 @@ public class PlayerMngr : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        UpdateMovement();
+    }
+
     void UpdateMovement()
     {
-        if (isPlayerReady)
-        {
-            //GetAxis
-            dirX = Input.GetAxisRaw("Horizontal");
-            rb.linearVelocity = new Vector2(dirX * speed, rb.linearVelocity.y);
-
-            if (Input.GetKeyDown("space") && IsGrounded())
-            {
-                //sndManager.GetComponent<SoundManager>().PlayFX(0);
-                GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, jumpSpeed);
-            }
-        }
+        rb.linearVelocity = new Vector2(dirX * speed, rb.linearVelocity.y);
     }
 
     void UpdateAnimator()
@@ -99,6 +112,22 @@ public class PlayerMngr : MonoBehaviour
             anim.SetBool("Jump", false);
             anim.SetBool("Fall", false);
         }
+    }
+
+    IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+
+        rb.linearVelocityX = dirX * dashSpeed;
+
+        yield return new WaitForSeconds(dashDuration);
+
+        rb.linearVelocityX = 0;
+        isDashing = false;
+
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
     }
 
     bool IsGrounded()
@@ -152,7 +181,7 @@ public class PlayerMngr : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D c)
     {
-        if (c.gameObject.CompareTag("Trap") || c.gameObject.CompareTag("Death") || c.gameObject.CompareTag("Enemy"))
+        if (c.gameObject.CompareTag("Trap") || c.gameObject.CompareTag("Enemy"))
         {
             KillPlayer();
         }
@@ -166,6 +195,11 @@ public class PlayerMngr : MonoBehaviour
             //sndManager.GetComponent<SoundManager>().PlayFX(2);
             rb.bodyType = RigidbodyType2D.Static;
             Invoke("CompleteLevel", 2f);
+        }
+
+        if(c.gameObject.CompareTag("Death"))
+        {
+            KillPlayer();
         }
     }
 }
