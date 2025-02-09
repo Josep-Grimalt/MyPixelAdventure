@@ -150,7 +150,7 @@ public class PlayerMngr : MonoBehaviour
         isPlayerReady = false;
         lifes -= 1;
         //sndManager.GetComponent<SoundManager>().PlayFX(3);
-        anim.SetBool("dead", isDead);
+        anim.SetBool("Death", isDead);
         rb.bodyType = RigidbodyType2D.Static;
 
         if (lifes > 0)

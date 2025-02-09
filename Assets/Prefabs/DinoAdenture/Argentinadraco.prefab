@@ -110,7 +110,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 1545628140, guid: 3d86172995e2dfc43a0bae7b04ac3924, type: 3}
+  m_Sprite: {fileID: -899151687824872557, guid: 77ef6ba533767cc4fb9fdf58e2c7004f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -236,7 +236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3492554160864378015}
   m_Layer: 0
-  m_Name: Pteranodon
+  m_Name: Argentinadraco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

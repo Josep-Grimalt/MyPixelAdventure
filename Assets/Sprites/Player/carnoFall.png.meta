@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: be5f4ed830a40df4d91680f62a700645
+guid: 8679cb365249ceb478e0e3f371f8b19e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6899091504383921358
-    second: windrise-background-capa2_0
+      213: -5352902213260971195
+    second: carnoFall_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: windrise-background-capa2_0
+      name: carnoFall_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 2048
-        height: 569
+        y: 3
+        width: 45
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 233f74864d08140a0800000000000000
-      internalID: -6899091504383921358
+      spriteID: 5437d254ccba6b5b0800000000000000
+      internalID: -5352902213260971195
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      windrise-background-capa2_0: -6899091504383921358
+      carnoFall_0: -5352902213260971195
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

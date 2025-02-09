@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: be5f4ed830a40df4d91680f62a700645
+guid: 06bf7f49b5bf7db4c8c76fd27eb8616a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6899091504383921358
-    second: windrise-background-capa2_0
+      213: -2181238008197549686
+    second: carnoWalk_0
+  - first:
+      213: 2407196874367407838
+    second: carnoWalk_1
+  - first:
+      213: 7343632744403617161
+    second: carnoWalk_2
+  - first:
+      213: -5316811354433769388
+    second: carnoWalk_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: windrise-background-capa2_0
+      name: carnoWalk_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2048
-        height: 569
+        x: 7
+        y: 3
+        width: 40
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +137,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 233f74864d08140a0800000000000000
-      internalID: -6899091504383921358
+      spriteID: a81fdc6969faab1e0800000000000000
+      internalID: -2181238008197549686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carnoWalk_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 3
+        width: 40
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed69919adc4186120800000000000000
+      internalID: 2407196874367407838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carnoWalk_2
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 3
+        width: 41
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 985ca13a213d9e560800000000000000
+      internalID: 7343632744403617161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carnoWalk_3
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 3
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45036392e34e636b0800000000000000
+      internalID: -5316811354433769388
       vertices: []
       indices: 
       edges: []
@@ -148,7 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      windrise-background-capa2_0: -6899091504383921358
+      carnoWalk_0: -2181238008197549686
+      carnoWalk_1: 2407196874367407838
+      carnoWalk_2: 7343632744403617161
+      carnoWalk_3: -5316811354433769388
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
