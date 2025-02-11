@@ -127,15 +127,6 @@ public class PlayerMngr : MonoBehaviour
 
     bool IsGrounded()
     {
-        //return (rb.velocity.y == 0f)?true:false;
-        /*
-        if (rb.velocity.y == 0f) 
-        {
-            return true;
-        } else {
-            return false;
-        }
-        */
         return Physics2D.BoxCast(col.bounds.center, col.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
 
@@ -143,17 +134,16 @@ public class PlayerMngr : MonoBehaviour
     {
         isDead = true;
         isPlayerReady = false;
-        lifes -= 1;
+        lifes--;
+        dirX = 0;
         //sndManager.GetComponent<SoundManager>().PlayFX(3);
         anim.SetTrigger("Death");
         anim.SetBool("Dead", true);
         GetComponent<Collider2D>().enabled = false;
 
-        Debug.Log(gameManager);
-
         if (lifes > 0)
         {
-            Invoke("RestartLevel", 2f);
+            Invoke(nameof(RestartLevel), 2f);
         }
         else
         {
@@ -184,6 +174,19 @@ public class PlayerMngr : MonoBehaviour
         if (c.gameObject.CompareTag("Trap") || c.gameObject.CompareTag("Enemy"))
         {
             KillPlayer();
+        }
+
+        if (c.gameObject.CompareTag("Platform"))
+        {
+            transform.SetParent(c.transform);
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D c)
+    {
+        if (c.gameObject.CompareTag("Platform"))
+        {
+            transform.SetParent(null);
         }
     }
 

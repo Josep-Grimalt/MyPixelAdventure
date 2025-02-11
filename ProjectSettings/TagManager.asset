@@ -10,6 +10,7 @@ TagManager:
   - GameManager
   - Enemy
   - Death
+  - Platform
   layers:
   - Default
   - TransparentFX
