@@ -147,9 +147,9 @@ public class PlayerMngr : MonoBehaviour
         //sndManager.GetComponent<SoundManager>().PlayFX(3);
         anim.SetTrigger("Death");
         anim.SetBool("Dead", true);
-        if (rb.linearVelocityY < 0.1f)
-            rb.bodyType = RigidbodyType2D.Kinematic;
-        dirX = 0;
+        GetComponent<Collider2D>().enabled = false;
+
+        Debug.Log(gameManager);
 
         if (lifes > 0)
         {
