@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerMngr : MonoBehaviour
@@ -16,6 +17,7 @@ public class PlayerMngr : MonoBehaviour
     private bool canDash;
 
     private int lifes;
+    private bool isDead;
     private bool isPlayerReady;
 
     void Start()
