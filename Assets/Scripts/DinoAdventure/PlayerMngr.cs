@@ -74,6 +74,8 @@ public class PlayerMngr : MonoBehaviour
 
     void UpdateMovement()
     {
+        if (!canDash) return;
+
         rb.linearVelocity = new Vector2(dirX * speed, rb.linearVelocity.y);
     }
 
