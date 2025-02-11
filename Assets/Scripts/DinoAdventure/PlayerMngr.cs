@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMngr : MonoBehaviour
 {
-    //private GameObject gameManager;
+    private GameObject gameManager;
     //private GameObject sndManager;
     private Animator anim;
     private Rigidbody2D rb;
@@ -16,7 +16,7 @@ public class PlayerMngr : MonoBehaviour
     [SerializeField] private float jumpSpeed = 7f;
     [SerializeField] private float dashSpeed = 70f, dashDuration = 0.2f, dashCooldown = 1;
     private float dirX;
-    private bool canDash, isDashing;
+    private bool canDash;
 
     private int lifes;
     private bool isDead;
@@ -28,7 +28,7 @@ public class PlayerMngr : MonoBehaviour
         anim = GetComponent<Animator>();
         col = GetComponent<BoxCollider2D>();
         //sndManager = GameObject.FindGameObjectWithTag("SoundManager");
-        //gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        gameManager = GameObject.FindGameObjectWithTag("GameManager");
 
         Invoke("InitPlayer", 0.75f);
     }
@@ -39,7 +39,6 @@ public class PlayerMngr : MonoBehaviour
         isDead = false;
         isPlayerReady = true;
         canDash = true;
-        isDashing = false;
     }
 
     void Update()
@@ -117,14 +116,12 @@ public class PlayerMngr : MonoBehaviour
     IEnumerator Dash()
     {
         canDash = false;
-        isDashing = true;
 
         rb.linearVelocityX = dirX * dashSpeed;
 
         yield return new WaitForSeconds(dashDuration);
 
         rb.linearVelocityX = 0;
-        isDashing = false;
 
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
@@ -150,8 +147,11 @@ public class PlayerMngr : MonoBehaviour
         isPlayerReady = false;
         lifes -= 1;
         //sndManager.GetComponent<SoundManager>().PlayFX(3);
-        anim.SetBool("Death", isDead);
-        rb.bodyType = RigidbodyType2D.Static;
+        anim.SetTrigger("Death");
+        anim.SetBool("Dead", true);
+        if (rb.linearVelocityY < 0.1f)
+            rb.bodyType = RigidbodyType2D.Kinematic;
+        dirX = 0;
 
         if (lifes > 0)
         {
@@ -166,17 +166,19 @@ public class PlayerMngr : MonoBehaviour
 
     void CompleteLevel()
     {
-        //gameManager.GetComponent<GameManager>().CompleteLevel();
+        gameManager.GetComponent<GameManager>().CompleteLevel();
     }
 
     void RestartLevel()
     {
-        //gameManager.GetComponent<GameManager>().RestartLevel();
+        if (!gameManager) return;
+
+        gameManager.GetComponent<GameManager>().RestartLevel();
     }
 
     void GameOver()
     {
-        //gameManager.GetComponent<GameManager>().GameOver();
+        gameManager.GetComponent<GameManager>().GameOver();
     }
 
     void OnCollisionEnter2D(Collision2D c)
@@ -197,7 +199,7 @@ public class PlayerMngr : MonoBehaviour
             Invoke("CompleteLevel", 2f);
         }
 
-        if(c.gameObject.CompareTag("Death"))
+        if (c.gameObject.CompareTag("Death"))
         {
             KillPlayer();
         }
