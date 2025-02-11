@@ -14,7 +14,7 @@ public class PlayerMngr : MonoBehaviour
     [SerializeField] private float jumpSpeed = 7f;
     [SerializeField] private float dashSpeed = 70f, dashDuration = 0.2f, dashCooldown = 1;
     private float dirX;
-    private bool canDash;
+    private bool canDash, isDashing;
 
     private int lifes;
     private bool isDead;
@@ -37,6 +37,7 @@ public class PlayerMngr : MonoBehaviour
         isDead = false;
         isPlayerReady = true;
         canDash = true;
+        isDashing = false;
     }
 
     void Update()
@@ -74,7 +75,7 @@ public class PlayerMngr : MonoBehaviour
 
     void UpdateMovement()
     {
-        if (!canDash) return;
+        if (isDashing) return;
 
         rb.linearVelocity = new Vector2(dirX * speed, rb.linearVelocity.y);
     }
@@ -116,12 +117,14 @@ public class PlayerMngr : MonoBehaviour
     IEnumerator Dash()
     {
         canDash = false;
+        isDashing = true;
 
         rb.linearVelocityX = dirX * dashSpeed;
 
         yield return new WaitForSeconds(dashDuration);
 
         rb.linearVelocityX = 0;
+        isDashing = false;
 
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
