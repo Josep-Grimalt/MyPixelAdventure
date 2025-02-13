@@ -78,4 +78,18 @@ public class PlayerMovementController : MonoBehaviour
         }
     }
 
+    public void LeftWalk()
+    {
+        dirX = -1;
+    }
+
+    public void RightWalk()
+    {
+        dirX = 1;
+    }
+
+    public void StopWalk()
+    {
+        dirX = 0;
+    }
 }
