@@ -7,7 +7,7 @@ public class PlayerMngr : MonoBehaviour
     [SerializeField] private Text itemsText;
 
     private GameObject gameManager;
-    //private GameObject sndManager;
+    private GameObject sndManager;
     private int lifes, itemsCollected;
     private bool isPlayerReady;
     private Rigidbody2D rb;
@@ -18,7 +18,7 @@ public class PlayerMngr : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<PlayerAnimatorController>();
 
-        //sndManager = GameObject.FindGameObjectWithTag("SoundManager");
+        sndManager = GameObject.FindGameObjectWithTag("SoundManager");
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
 
         Invoke(nameof(InitPlayer), 0.75f);
@@ -51,7 +51,7 @@ public class PlayerMngr : MonoBehaviour
     {
         isPlayerReady = false;
         lifes--;
-        //sndManager.GetComponent<SoundManager>().PlayFX(3);
+        sndManager.GetComponent<SoundManager>().PlayFX(3);
         GetComponent<Collider2D>().enabled = false;
 
         anim.Die();
@@ -75,7 +75,7 @@ public class PlayerMngr : MonoBehaviour
     public void LevelCompleted()
     {
         isPlayerReady = false;
-        //sndManager.GetComponent<SoundManager>().PlayFX(2);
+        sndManager.GetComponent<SoundManager>().PlayFX(2);
     }
 
     public void CompleteLevel()
