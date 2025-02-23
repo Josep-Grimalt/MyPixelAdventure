@@ -123,7 +123,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3741616210200539829}
         m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
-        m_MethodName: loadScene
+        m_MethodName: LoadGame
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
