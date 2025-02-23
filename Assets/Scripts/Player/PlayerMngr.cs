@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class PlayerMngr : MonoBehaviour
 {
     [SerializeField] private Text itemsText;
+    [SerializeField] private RectTransform PlayerLifes;
+    [SerializeField] private GameObject PlayerLife;
 
     private GameObject gameManager;
     private GameObject sndManager;

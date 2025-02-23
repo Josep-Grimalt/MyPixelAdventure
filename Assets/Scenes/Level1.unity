@@ -5173,6 +5173,7 @@ MonoBehaviour:
   isLevelRestarted: 0
   isLevelCompleted: 0
   isGameCompleted: 0
+  playerLifes: 3
 --- !u!4 &1967524931
 Transform:
   m_ObjectHideFlags: 0
@@ -5619,9 +5620,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1017376589850372567}
+    - target: {fileID: 1742617384494362991, guid: 9c90a85603fb53f4eae6e1becf2cfa61, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767249622447344318, guid: 9c90a85603fb53f4eae6e1becf2cfa61, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2895188292181834424, guid: 9c90a85603fb53f4eae6e1becf2cfa61, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3791581823084021729, guid: 9c90a85603fb53f4eae6e1becf2cfa61, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 4683919889695645829, guid: 9c90a85603fb53f4eae6e1becf2cfa61, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -5729,11 +5742,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6175577968610536218, guid: 9c90a85603fb53f4eae6e1becf2cfa61, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -10
+      value: -65
       objectReference: {fileID: 0}
     - target: {fileID: 6243516017849477185, guid: 9c90a85603fb53f4eae6e1becf2cfa61, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927495753877871484, guid: 9c90a85603fb53f4eae6e1becf2cfa61, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

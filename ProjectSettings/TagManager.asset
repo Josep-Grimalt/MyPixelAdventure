@@ -12,6 +12,7 @@ TagManager:
   - Death
   - Platform
   - Wall
+  - Life
   layers:
   - Default
   - TransparentFX
