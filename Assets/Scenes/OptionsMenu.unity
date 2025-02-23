@@ -292,7 +292,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 69341633}
         m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
-        m_MethodName: loadScene
+        m_MethodName: LoadGame
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
