@@ -26,9 +26,10 @@ public class PlayerMngr : MonoBehaviour
 
     void InitPlayer()
     {
-        lifes = 3;
+        lifes = gameManager.GetComponent<GameManager>().playerLifes;
         itemsCollected = 0;
         isPlayerReady = true;
+        itemsText.text = "ITEMS: " + itemsCollected;
     }
 
     void Update()
@@ -51,6 +52,7 @@ public class PlayerMngr : MonoBehaviour
     {
         isPlayerReady = false;
         lifes--;
+        gameManager.GetComponent<GameManager>().PlayerDeath();
         sndManager.GetComponent<SoundManager>().PlayFX(3);
         GetComponent<Collider2D>().enabled = false;
 

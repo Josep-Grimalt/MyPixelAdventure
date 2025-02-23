@@ -11,11 +11,13 @@ public class GameManager : MonoBehaviour
     public bool isLevelRestarted = false;
     public bool isLevelCompleted = false;
     public bool isGameCompleted = false;
+    public int playerLifes = 3;
+
 
     void Start()
     {
         //SOUNDMANAGER
-        // InitSoundManager();
+        InitSoundManager();
     }
 
     void InitSoundManager()
@@ -48,6 +50,11 @@ public class GameManager : MonoBehaviour
                 SceneManager.LoadScene(1);
             }
         }
+    }
+
+    public void PlayerDeath()
+    {
+        playerLifes--;
     }
 
     public void GameOver()
