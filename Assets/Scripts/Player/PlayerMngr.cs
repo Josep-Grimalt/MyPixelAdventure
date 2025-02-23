@@ -5,8 +5,7 @@ using UnityEngine.UI;
 public class PlayerMngr : MonoBehaviour
 {
     [SerializeField] private Text itemsText;
-    [SerializeField] private RectTransform PlayerLifes;
-    [SerializeField] private GameObject PlayerLife;
+    [SerializeField] private GameObject[] playerLifes;
 
     private GameObject gameManager;
     private GameObject sndManager;
@@ -32,6 +31,10 @@ public class PlayerMngr : MonoBehaviour
         itemsCollected = 0;
         isPlayerReady = true;
         itemsText.text = "ITEMS: " + itemsCollected;
+        for(int i = 0; i < lifes; i++)
+        {
+            playerLifes[i].SetActive(true);
+        }
     }
 
     void Update()
@@ -57,6 +60,7 @@ public class PlayerMngr : MonoBehaviour
         gameManager.GetComponent<GameManager>().PlayerDeath();
         sndManager.GetComponent<SoundManager>().PlayFX(3);
         GetComponent<Collider2D>().enabled = false;
+        playerLifes[lifes].SetActive(false);
 
         anim.Die();
 
