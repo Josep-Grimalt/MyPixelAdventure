@@ -22,6 +22,16 @@ public class PlayerCollisionController : MonoBehaviour
         {
             transform.SetParent(c.transform);
         }
+
+        if(c.gameObject.CompareTag("Wall"))
+        {
+            Debug.Log("Wall");
+            Debug.Log(rb.linearVelocityX);
+            if(rb.linearVelocityX > 15)
+            {
+                Destroy(c.gameObject);
+            }
+        }
     }
 
     void OnCollisionExit2D(Collision2D c)
