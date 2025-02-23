@@ -30,7 +30,6 @@ public class PlayerMngr : MonoBehaviour
         lifes = gameManager.GetComponent<GameManager>().playerLifes;
         itemsCollected = 0;
         isPlayerReady = true;
-        itemsText.text = "ITEMS: " + itemsCollected;
         for(int i = 0; i < lifes; i++)
         {
             playerLifes[i].SetActive(true);
