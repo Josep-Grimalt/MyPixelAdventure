@@ -6,11 +6,12 @@ public class PlayerCollisionController : MonoBehaviour
     private Rigidbody2D rb;
     private PlayerMngr manager;
 
-    private void Awake() {
+    private void Awake()
+    {
         rb = GetComponent<Rigidbody2D>();
         manager = GetComponent<PlayerMngr>();
     }
-    
+
     void OnCollisionEnter2D(Collision2D c)
     {
         if (c.gameObject.CompareTag("Trap") || c.gameObject.CompareTag("Enemy"))
@@ -21,16 +22,6 @@ public class PlayerCollisionController : MonoBehaviour
         if (c.gameObject.CompareTag("Platform"))
         {
             transform.SetParent(c.transform);
-        }
-
-        if(c.gameObject.CompareTag("Wall"))
-        {
-            Debug.Log("Wall");
-            Debug.Log(rb.linearVelocityX);
-            if(rb.linearVelocityX > 15)
-            {
-                Destroy(c.gameObject);
-            }
         }
     }
 
@@ -56,10 +47,17 @@ public class PlayerCollisionController : MonoBehaviour
             manager.KillPlayer();
         }
 
-        if(c.gameObject.CompareTag("Collectible"))
+        if (c.gameObject.CompareTag("Collectible"))
         {
             manager.Collect();
             Destroy(c.gameObject);
+        }
+        if (c.gameObject.CompareTag("Wall"))
+        {
+            if (rb.linearVelocityX > 15)
+            {
+                Destroy(c.gameObject);
+            }
         }
     }
 
