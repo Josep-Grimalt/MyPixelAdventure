@@ -42,8 +42,10 @@ public class GameManager : MonoBehaviour
     {
         if (isGameCompleted || isGameOver)
         {
-            GUIStyle myButtonStyle = new GUIStyle(GUI.skin.button);
-            myButtonStyle.fontSize = 30;
+            GUIStyle myButtonStyle = new(GUI.skin.button)
+            {
+                fontSize = 30
+            };
             if (GUI.Button(new Rect(Screen.width / 2 - Screen.width / 8, Screen.height / 2 - Screen.height / 8, Screen.width / 4, Screen.height / 4), isGameCompleted ? "CONGRATULATIONS!!" : "GAMEOVER!!", myButtonStyle))
             {
                 Reset();
@@ -60,7 +62,6 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         isGameOver = true;
-        GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
     }
 
     public void RestartLevel()
