@@ -14,11 +14,6 @@ public class GameManager : MonoBehaviour
     public bool isGameCompleted = false;
     public int playerLifes = 3;
 
-    private void OnEnable()
-    {
-        SceneManager.activeSceneChanged += SetLifes;
-    }
-
     void Start()
     {
         //SOUNDMANAGER
@@ -41,6 +36,7 @@ public class GameManager : MonoBehaviour
         isLevelRestarted = false;
         isLevelCompleted = false;
         isGameCompleted = false;
+        playerLifes = 3;
     }
 
     void OnGUI()
@@ -83,14 +79,6 @@ public class GameManager : MonoBehaviour
         else
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
-    }
-
-    private void SetLifes(Scene arg0, Scene arg1)
-    {
-        if (arg0.buildIndex >= 2 && arg1.buildIndex == 1)
-        {
-            playerLifes = 3;
         }
     }
 }
