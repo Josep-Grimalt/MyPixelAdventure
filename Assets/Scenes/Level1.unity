@@ -4919,11 +4919,11 @@ Tilemap:
       e00: 1
       e01: 0
       e02: 0
-      e03: 0
+      e03: -3.9682312
       e10: 0
       e11: 1
       e12: 0
-      e13: 0
+      e13: -2.0156078
       e20: 0
       e21: 0
       e22: 1
@@ -4931,6 +4931,24 @@ Tilemap:
       e30: 0
       e31: 0
       e32: 0
+      e33: 1
+  - m_RefCount: 0
+    m_Data:
+      e00: 7.9012634e+13
+      e01: 6.7e-44
+      e02: 2.7029838e-14
+      e03: 0
+      e10: 3.43e-43
+      e11: NaN
+      e12: 4.5911e-41
+      e13: 0
+      e20: 6.3899e-41
+      e21: 0
+      e22: 7.90125e+13
+      e23: 0
+      e30: 0
+      e31: 7.34684e-40
+      e32: 3.43e-43
       e33: 1
   m_TileColorArray:
   - m_RefCount: 0
@@ -5023,7 +5041,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1525295456702728210, guid: 5309fa31f99318d408f6d47b56ab773c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.5
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 4143171591535894595, guid: 5309fa31f99318d408f6d47b56ab773c, type: 3}
       propertyPath: m_Name
@@ -5039,7 +5057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6364985670169719742, guid: 5309fa31f99318d408f6d47b56ab773c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 1525295456702728210, guid: 24c875f0f854da04abef4f5c7fece532, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6542,7 +6560,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6131888712287094404, guid: 6912e4ee26c237d49ae092bc2460a829, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.35
+      value: -6.5
       objectReference: {fileID: 0}
     - target: {fileID: 6131888712287094404, guid: 6912e4ee26c237d49ae092bc2460a829, type: 3}
       propertyPath: m_LocalPosition.z
