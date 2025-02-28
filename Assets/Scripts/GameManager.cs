@@ -14,6 +14,11 @@ public class GameManager : MonoBehaviour
     public bool isGameCompleted = false;
     public int playerLifes = 3;
 
+    private void OnEnable()
+    {
+        SceneManager.activeSceneChanged += ResetPlayerLifes;
+    }
+
     void Start()
     {
         //SOUNDMANAGER
@@ -81,4 +86,13 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
+
+    private void ResetPlayerLifes(Scene arg0, Scene arg1)
+    {
+        if(playerLifes != 3 && arg1.buildIndex == 1 && arg0.buildIndex != 5)
+        {
+            playerLifes = 3;
+        }
+    }
+
 }
