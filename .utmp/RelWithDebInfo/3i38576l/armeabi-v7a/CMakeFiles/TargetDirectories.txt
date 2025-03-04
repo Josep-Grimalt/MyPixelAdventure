@@ -1,0 +1,5 @@
+C:/Users/Videojocs/UnityProjs/MyPixelAdventure/.utmp/RelWithDebInfo/3i38576l/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/Videojocs/UnityProjs/MyPixelAdventure/.utmp/RelWithDebInfo/3i38576l/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+C:/Users/Videojocs/UnityProjs/MyPixelAdventure/.utmp/RelWithDebInfo/3i38576l/armeabi-v7a/FramePacing/CMakeFiles/swappywrapper.dir
+C:/Users/Videojocs/UnityProjs/MyPixelAdventure/.utmp/RelWithDebInfo/3i38576l/armeabi-v7a/FramePacing/CMakeFiles/edit_cache.dir
+C:/Users/Videojocs/UnityProjs/MyPixelAdventure/.utmp/RelWithDebInfo/3i38576l/armeabi-v7a/FramePacing/CMakeFiles/rebuild_cache.dir
